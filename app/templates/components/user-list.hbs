@@ -1,0 +1,25 @@
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Location</th>
+<th>User Since</th>
+{{#if showMemberInfo}}
+<th>Subscribed Since</th><th>Expires</th>
+{{/if}}
+</tr>
+</thead>
+<tbody>
+{{#each users as |user|}}
+<tr>
+<td>{{user.name}}</td>
+<td>{{user.location}}</td>
+<td>{{moment-format user.subscriptionDate "MM/DD/YYYY"}}</td>
+{{#if showMemberInfo}}
+<td>{{moment-format user.subscriptionDate "MM/DD/YYYY"}}</td>
+<td>{{moment-from-now user.expirationDate}}</td>
+{{/if}}
+</tr>
+{{/each}}
+</tbody>
+</table>

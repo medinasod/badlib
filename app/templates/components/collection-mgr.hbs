@@ -1,0 +1,19 @@
+
+
+<form>
+{{input value=name id="txtInputName" placeholder="Name"}}
+
+<select>
+  {{#each museums as |museum|}}
+  <option value="{{museum.id}}">{{museum.name}}</option>
+  {{/each}}
+</select>
+
+<button type="submit" {{action "addCollection"}}>Add Collection</button>
+</form>
+
+<ul>
+  {{#each museum-collection as |collection|}}
+    <li><button {{action "removeCollection" collection}}>{{collection.name}}</button></li>
+  {{/each}}
+</ul>

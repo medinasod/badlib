@@ -1,11 +1,21 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var Funnel = require('broccoli-funnel');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    // options here
   });
+
+  var customFonts = new Funnel('vendor/fonts', {
+    srcDir: '/',
+    destDir: 'fonts'
+  });
+
+  // Providing additional trees to the `toTree` method will result in those
+  // trees being merged in the final output.
+  return app.toTree(customFonts);
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

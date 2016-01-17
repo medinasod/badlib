@@ -1,0 +1,1 @@
+* Utilize https://github.com/esbanarango/ember-model-validator

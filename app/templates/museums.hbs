@@ -1,0 +1,9 @@
+
+{{input value=name placeholder="Name"}}
+{{input value=address placeholder="Address"}}
+<button {{action "addMuseum"}}>Add Museum</button>
+<ul>
+  {{#each model as |museum|}}
+      <li>{{museum.name}}, {{museum.address}}</li>
+  {{/each}}
+</ul>
